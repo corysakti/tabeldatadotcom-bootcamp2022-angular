@@ -1,0 +1,25 @@
+<p>Tabel Yang mengambil data spring department</p>
+
+<table>
+    <thead>
+        <tr>
+            <th scope="col">IdCT</th>
+            <th scope="col">NmCT</th>
+            <th scope="col">descCT</th>
+            <th scope="col">IdDep</th>
+            <th scope="col">NmDep</th>
+            <th scope="col">DescDep</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ld of listCat">
+            <td>{{ld.id}}</td>
+            <td>{{ld.nama}}</td>
+            <td>{{ld.description}}</td>
+            <td>{{ld.department.id}}</td>
+            <td>{{ld.department.nama}}</td>
+            <td>{{ld.department.description}}</td>
+        </tr>
+    </tbody>
+    
+</table>
