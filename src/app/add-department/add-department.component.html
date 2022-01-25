@@ -1,0 +1,14 @@
+<p>Form department</p>
+
+<form [formGroup]="formedit" class="form-control" (submit)="submit()">
+    <div class="mb-3">
+        <label for="nama" class="form-label">Nama</label>
+        <input type="text" class="form-control" formControlName = "nama" placeholder="isi nama anda">
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">Deskripsi</label>
+        <input type="text" class="form-control" formControlName = "description" placeholder="isi keterangan anda">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>

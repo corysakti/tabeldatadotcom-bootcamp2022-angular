@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
+import { Departemen } from 'model/departemen';
 
 //inject ?
 @Injectable({
@@ -25,6 +26,13 @@ export class MasterService {
    }
    listDepartemen(): Observable<any> {
      return this.http.get(environment.baseUrl+'/department/list')
+     .pipe(map(data => data))
+   }
+
+   save(dept: Departemen): Observable<any> {
+     const url = environment.baseUrl+'/department/save';
+     console.log(url);
+     return this.http.post(environment.baseUrl+'/department/save',dept)
      .pipe(map(data => data))
    }
 }

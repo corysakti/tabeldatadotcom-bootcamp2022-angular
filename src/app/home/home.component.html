@@ -4,6 +4,13 @@
 
 
 <table class="table">
+    <thead>
+        <tr>
+            <th scope = "col">IdDep</th>
+            <th scope = "col">NmDep</th>
+            <th scope = "col">DescDep</th>
+        </tr>
+    </thead>
     <tr *ngFor="let ld of listDept">
         <td>{{ld.id}}</td>
         <td>{{ld.nama}}</td>

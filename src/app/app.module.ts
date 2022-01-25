@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { HttpClientModule} from '@angular/common/http';
 import { CategoryComponent } from './category/category.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddDepartmentComponent } from './add-department/add-department.component';
 
 
 
@@ -15,12 +17,15 @@ import { CategoryComponent } from './category/category.component';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    CategoryComponent
+    CategoryComponent,
+    AddDepartmentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

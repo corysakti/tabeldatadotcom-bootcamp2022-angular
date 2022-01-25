@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Departemen } from 'model/departemen';
 import { MasterService } from '../services/master.service';
 
@@ -10,12 +11,18 @@ import { MasterService } from '../services/master.service';
 })
 export class HomeComponent implements OnInit {
 
+  formGroup! : FormGroup;
   listDept!: Departemen[];
   constructor(private mast: MasterService) { }
 
   ngOnInit(): void {
     // apa itu observable ? 
     // apa itu subscribe
+
+    this.formGroup = new FormGroup({
+      ''
+    })
+
     this.mast.listDepartemen().subscribe(
       {
         next: hasil => {
