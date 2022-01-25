@@ -5,6 +5,7 @@ import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Departemen } from 'model/departemen';
 
+
 //inject ?
 @Injectable({
   providedIn: 'root'
@@ -30,9 +31,20 @@ export class MasterService {
    }
 
    save(dept: Departemen): Observable<any> {
-     const url = environment.baseUrl+'/department/save';
-     console.log(url);
+     
+     if(dept.id){
+      //  url = "/update";
+     }
      return this.http.post(environment.baseUrl+'/department/save',dept)
      .pipe(map(data => data))
    }
+
+   getDeptId(id:BigInteger): Observable<any> {
+    return this.http.get(environment.baseUrl+'/department/findById/'+id)
+    .pipe(map(data => data))
+  }
+
+  updateDept(Dept:Departemen): Observable<any> {
+    return this.http.put(environment.baseUrl+'/department/'+Dept.id,Dept).pipe(map(data =>data))
+  }
 }

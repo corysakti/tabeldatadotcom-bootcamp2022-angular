@@ -1,14 +1,27 @@
-<p>Form department</p>
+<ul *ngFor="let ld of pesan">
+  <li>{{ld['field']}} - {{ld['defaultMessage']}}</li>
+  <p>ased kntl</p>
+</ul>
 
-<form [formGroup]="formedit" class="form-control" (submit)="submit()">
+
+<form [formGroup]="formedit" class="form-control" (ngSubmit)="submit()">
     <div class="mb-3">
         <label for="nama" class="form-label">Nama</label>
-        <input type="text" class="form-control" formControlName = "nama" placeholder="isi nama anda">
+        <input type="text" class="form-control" [formControlName] = '"nama"' placeholder="isi nama anda">
+        <span
+          *ngIf="nama && nama.invalid" class="help-block">
+        name is required!
+        </span>
+       
       </div>
       <div class="mb-3">
         <label for="desc" class="form-label">Deskripsi</label>
-        <input type="text" class="form-control" formControlName = "description" placeholder="isi keterangan anda">
+        <input type="text" class="form-control" [formControlName] = '"description"' placeholder="isi keterangan anda">
       </div>
+      <span
+          *ngIf="description && description.invalid" class="help-block">
+        description is required!
+        </span>
       <button type="submit" class="btn btn-primary">Submit</button>
 
 </form>

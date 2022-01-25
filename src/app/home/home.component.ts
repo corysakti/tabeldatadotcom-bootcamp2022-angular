@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Departemen } from 'model/departemen';
 import { MasterService } from '../services/master.service';
 
@@ -20,8 +20,9 @@ export class HomeComponent implements OnInit {
     // apa itu subscribe
 
     this.formGroup = new FormGroup({
-      ''
-    })
+      'nama' : new FormControl(null, [Validators.required]),
+      'description' : new FormControl(null, [Validators.required])
+    });
 
     this.mast.listDepartemen().subscribe(
       {
