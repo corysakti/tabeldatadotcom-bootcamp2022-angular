@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Departemen } from 'model/departemen';
 import { MasterService } from '../services/master.service';
 
@@ -12,8 +13,38 @@ import { MasterService } from '../services/master.service';
 export class HomeComponent implements OnInit {
 
   formGroup! : FormGroup;
+  id! : Uint8Array;
+  
   listDept!: Departemen[];
-  constructor(private mast: MasterService) { }
+  constructor(
+    private mast: MasterService, 
+    private ruter : Router,
+    private route : ActivatedRoute,
+    private formBuild: FormBuilder) {
+      this.formGroup = this.formBuild.group( {
+
+      })
+   }
+
+   deleteButton(id : BigInteger) : void {
+    //  this.mast.getDeptId(this.id);
+    console.log(id);
+
+    console.log("id delete button: "+id);
+    this.mast.deleteDept(id).subscribe({
+      next : hasil => {
+        alert("Departement dengan ID :"+id+" Berhasil dihapus");
+        
+      },
+      error : err => {
+        alert("ada yang error bray, "+err);
+      },
+      complete : () => {
+        alert("method berhasil dijalankan")
+        this.ruter.url;
+      }
+    })
+  }
 
   ngOnInit(): void {
     // apa itu observable ? 
@@ -27,16 +58,20 @@ export class HomeComponent implements OnInit {
     this.mast.listDepartemen().subscribe(
       {
         next: hasil => {
-          this.listDept = hasil
+          this.listDept = hasil;
+          
         },
         error: err => {
           console.log(err)
         },
         complete: () => {
           alert(' OK !')
+          
         }
       }
     )
+
+    
       
   }
 

@@ -1,21 +1,32 @@
 <p>Tabel Yang mengambil data spring department</p>
 
-<div class="table-responsive">
 
 
-<table class="table">
+    
+    <div class="d-flex flex-row-reverse bd-highlight">
+        <div class="p-2 bd-highlight">
+            <a routerLink='/departement' class="btn btn-primary">Tambah</a>
+        </div>
+      </div>
+
+<table class="table table-striped">
     <thead>
         <tr>
             <th scope = "col">IdDep</th>
             <th scope = "col">NmDep</th>
             <th scope = "col">DescDep</th>
+            <th scope = "col">Action</th>
         </tr>
     </thead>
     <tr *ngFor="let ld of listDept">
         <td>{{ld.id}}</td>
         <td>{{ld.nama}}</td>
         <td>{{ld.description}}</td>
+        <td class="table-dark">
+            <a routerLink='/departement/{{ld.id}}' class="btn btn-link">Edit</a>
+            <button (click)="deleteButton(ld.id)" class="btn btn-danger">Hapus</button>
+        </td>
 
     </tr>
 </table>
-</div>
+

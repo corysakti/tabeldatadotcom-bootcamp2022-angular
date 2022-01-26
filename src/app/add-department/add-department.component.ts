@@ -75,13 +75,15 @@ export class AddDepartmentComponent implements OnInit {
           alert(this.pesan);
         },
         complete: () => {
-          console.log("Berhasil Ditambahkan")
-        }
+          console.log("Berhasil Ditambahkan");
+        },
       });
      }
      
      
    }
+
+   
 
   
 

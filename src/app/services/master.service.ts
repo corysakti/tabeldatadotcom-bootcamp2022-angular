@@ -47,4 +47,8 @@ export class MasterService {
   updateDept(Dept:Departemen): Observable<any> {
     return this.http.put(environment.baseUrl+'/department/'+Dept.id,Dept).pipe(map(data =>data))
   }
+
+  deleteDept(id:BigInteger): Observable<any> {
+    return this.http.delete(environment.baseUrl+'/department/'+id)
+  }
 }
