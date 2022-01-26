@@ -14,7 +14,9 @@ import { MasterService } from '../services/master.service';
 })
 export class AddDepartmentComponent implements OnInit {
   formedit! : FormGroup;
-  id! : BigInteger;
+  kirimpesan! : Departemen;
+  id! : number;
+  
   pesan! : any[];
   
 
@@ -60,17 +62,9 @@ export class AddDepartmentComponent implements OnInit {
         next : hasil => {
           console.log(hasil.id);
           this.ruter.navigateByUrl("departement/" + hasil.id);
+          
         },
         error : err => {
-          // let listError : any[] = err.error.status;
-          // let pesan = '';
-          
-          // for( let i = 0; i < listError.length; i++) {
-          //   pesan += listError[i].field+" : "+listError[i].defaultMessage
-          //   pesan += "\n";
-          // }
-          // alert("Error \n"+pesan);
-          // console.log(pesan);
           this.pesan = err.error.status;
           alert(this.pesan);
         },

@@ -1,6 +1,6 @@
 export class Departemen {
   // <nama_variable>! artinya adalah dia tidak perlu diinisialisasi
-  id!: Uint8Array ;
+  id!: number ;
   nama! : string;
   description!: string;
 }

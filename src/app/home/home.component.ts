@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
       })
    }
 
-   deleteButton(id : BigInteger) : void {
+   deleteButton(id : number) : void {
     //  this.mast.getDeptId(this.id);
     console.log(id);
 

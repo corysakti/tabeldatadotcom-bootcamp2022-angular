@@ -39,7 +39,7 @@ export class MasterService {
      .pipe(map(data => data))
    }
 
-   getDeptId(id:BigInteger): Observable<any> {
+   getDeptId(id:number): Observable<any> {
     return this.http.get(environment.baseUrl+'/department/findById/'+id)
     .pipe(map(data => data))
   }
@@ -48,7 +48,7 @@ export class MasterService {
     return this.http.put(environment.baseUrl+'/department/'+Dept.id,Dept).pipe(map(data =>data))
   }
 
-  deleteDept(id:BigInteger): Observable<any> {
+  deleteDept(id:number): Observable<any> {
     return this.http.delete(environment.baseUrl+'/department/'+id)
   }
 }

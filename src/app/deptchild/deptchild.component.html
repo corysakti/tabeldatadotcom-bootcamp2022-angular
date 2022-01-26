@@ -1,0 +1,21 @@
+
+<p>Masuk Child</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope = "col">IdDep</th>
+            <th scope = "col">NmDep</th>
+            <th scope = "col">DescDep</th>
+            <th scope = "col">Action</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let ld of listDept; index as i">
+        <td>{{ld.id}}</td>
+        <td>{{ld.nama}}</td>
+        <td>{{ld.description}}</td>
+        <td class="table-dark">
+            <button (click)="edit(i)" class="btn btn-link">Edit</button>
+            <button (click)="deleteButton(ld.id)" class="btn btn-danger">Hapus</button>
+        </td>
+
+    </tr>

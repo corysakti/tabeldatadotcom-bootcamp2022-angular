@@ -9,6 +9,8 @@ import { HttpClientModule} from '@angular/common/http';
 import { CategoryComponent } from './category/category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddDepartmentComponent } from './add-department/add-department.component';
+import { DeptindukComponent } from './deptinduk/deptinduk.component';
+import { DeptchildComponent } from './deptchild/deptchild.component';
 
 
 
@@ -18,7 +20,9 @@ import { AddDepartmentComponent } from './add-department/add-department.componen
     HomeComponent,
     AboutComponent,
     CategoryComponent,
-    AddDepartmentComponent
+    AddDepartmentComponent,
+    DeptindukComponent,
+    DeptchildComponent
   ],
   imports: [
     BrowserModule,
