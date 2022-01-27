@@ -51,4 +51,8 @@ export class MasterService {
   deleteDept(id:number): Observable<any> {
     return this.http.delete(environment.baseUrl+'/department/'+id)
   }
+
+  getProduct(id:number): Observable<any> {
+    return this.http.get(environment.baseUrl+'/product/'+id)
+  }
 }

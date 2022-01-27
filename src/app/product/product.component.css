@@ -1,0 +1,5 @@
+.message-container{
+    height: 400px;
+    overflow: auto;
+    border: solid 1px black;
+}

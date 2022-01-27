@@ -1,0 +1,30 @@
+
+<div class="container mt-4">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nama Produk</th>
+            <th scope="col">Jumlah</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let lp of pesan; index as i">
+            <th scope="row">{{lp?.id}}</th>
+            <td>{{lp?.name}}</td>
+            <td>{{lp?.total | number}}</td>
+            
+            <td>
+                <button class="btn btn-danger" (click)="delete(i)">
+                    Batal
+                </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-center">
+            Total Rp. {{total|number}}
+      </div>
+</div>
+

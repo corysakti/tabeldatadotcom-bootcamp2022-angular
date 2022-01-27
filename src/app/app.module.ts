@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddDepartmentComponent } from './add-department/add-department.component';
 import { DeptindukComponent } from './deptinduk/deptinduk.component';
 import { DeptchildComponent } from './deptchild/deptchild.component';
+import { ProductComponent } from './product/product.component';
+import { ProductChildComponent } from './product-child/product-child.component';
 
 
 
@@ -22,7 +24,10 @@ import { DeptchildComponent } from './deptchild/deptchild.component';
     CategoryComponent,
     AddDepartmentComponent,
     DeptindukComponent,
-    DeptchildComponent
+    DeptchildComponent,
+
+    ProductComponent,
+     ProductChildComponent
   ],
   imports: [
     BrowserModule,

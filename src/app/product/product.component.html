@@ -1,0 +1,49 @@
+<!-- 
+    <div class="mb-3">
+      <label for="id" class="form-label">Id</label>
+      <input type="text" class="form-control" id="id">
+    </div>
+
+    <div class="mb-3">
+        <label for="qty" class="form-label">Quantity</label>
+        <input type="text" class="form-control" id="quantity">
+    </div>
+
+    <div class="mb-3">
+        <label for="product_id" class="form-label">Akan berubah ketika id dipilih</label>
+    </div>
+
+    
+    <button type="submit" class="btn btn-primary">Add</button> -->
+
+    
+
+<br>
+<form [formGroup]="frmMessage">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <label for="id" class="form-label">Id</label>
+                <input formControlName ="id" class="form-control" (focusout)="onFocus()">
+            </div>
+            <div class="col">
+                <label for="id" class="form-label">qty</label>
+                <input formControlName ="qty" class="form-control">
+            </div>   
+            <div class="col">
+                
+                <p *ngIf="product">
+                    <label for="id" class="form-label"> </label>
+                    {{product.name}}
+                </p>
+            </div>
+            <div class="col mt-2">
+                <button class="btn btn-primary mt-4" (click)="simpan()">Add</button>
+            </div>  
+
+        </div>
+    </div>
+</form>
+
+<app-product-child [product]="pesan"></app-product-child>
+
