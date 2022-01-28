@@ -13,6 +13,8 @@ import { DeptindukComponent } from './deptinduk/deptinduk.component';
 import { DeptchildComponent } from './deptchild/deptchild.component';
 import { ProductComponent } from './product/product.component';
 import { ProductChildComponent } from './product-child/product-child.component';
+import { ListproductComponent } from './listproduct/listproduct.component';
+import { DataTablesModule} from "angular-datatables";
 
 
 
@@ -25,9 +27,9 @@ import { ProductChildComponent } from './product-child/product-child.component';
     AddDepartmentComponent,
     DeptindukComponent,
     DeptchildComponent,
-
     ProductComponent,
-     ProductChildComponent
+     ProductChildComponent,
+     ListproductComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import { ProductChildComponent } from './product-child/product-child.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    DataTablesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

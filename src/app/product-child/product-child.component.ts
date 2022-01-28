@@ -36,7 +36,7 @@ export class ProductChildComponent implements OnInit, OnChanges {
   
 
   ngOnInit(): void {
-    console.log(this.total);
+    
   }
 
   delete(i: number):void {

@@ -4,6 +4,8 @@ import { map, Observable } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import { Departemen } from 'model/departemen';
+import { Datatablerequest } from 'model/datatablerequest';
+import { Datatableresponse } from 'model/datatableresponse';
 
 
 //inject ?
@@ -54,5 +56,18 @@ export class MasterService {
 
   getProduct(id:number): Observable<any> {
     return this.http.get(environment.baseUrl+'/product/'+id)
+  }
+
+  listProduct(datatableParameter:any): Observable<Datatableresponse> {
+    const dtReq = new Datatablerequest();
+    dtReq.draw = datatableParameter.draw;
+    dtReq.length = datatableParameter.length;
+    dtReq.start = datatableParameter.start;
+    dtReq.sortCol = datatableParameter.order[0].column;
+    dtReq.sortDir = datatableParameter.order[0].dir;
+    dtReq.extraParam = datatableParameter.extraParam;
+    console.log(dtReq);
+    return this.http.post(environment.baseUrl+"/product/list",dtReq)
+    .pipe(map(data=>data as Datatableresponse));
   }
 }
